@@ -1,0 +1,25 @@
+<div class="container mt-4 mb-4">
+  <div class="text-center w-100 mt-4 mb-3">
+    <h3> Angular 7 e-Signature</h3>
+  </div>
+
+  <div class="mt-4">
+    <h4> Create new signature </h4>
+    <div #signatureWrapper class="signature-wrapper mt-3">
+      <div class="signature-options">
+        <i class="fas fa-download" (click)="downloadSignature()"></i>
+        <i class="fas fa-trash-alt" (click)="clearSignature()"></i>
+      </div>
+      <canvas #signatureCanvas [width]="canvasWidth" [height]="canvasHeight"
+        (mousemove)="mouseDraw($event)"
+        (touchmove)="touchDraw($event)"
+        (mousedown)="mouseStartDraw($event)"
+        (touchstart)="touchStartDraw($event)"
+        (mouseup)="mouseStopDraw()"
+        (touchend)="touchStopDraw()">
+        Your browser dont supports HTML5 Canvas! <br>
+        Maybe get a <a href="https://www.google.de/chrome/?brand=CHBD&gclid=EAIaIQobChMIhISc5fGP4QIVDbTtCh3egAebEAAYASAAEgIL-_D_BwE&gclsrc=aw.ds">realy browser?</a>
+      </canvas>
+    </div>
+  </div>
+</div>
